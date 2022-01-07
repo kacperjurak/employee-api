@@ -32,17 +32,17 @@ class Employee
     private string $login;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[RollerworksPassword\PasswordStrength(minStrength: 4, minLength: 8, message: 'Password should contain both lowercase and uppercase alpha characters, a digit and a special character ')]
+    #[RollerworksPassword\PasswordStrength(minStrength: 4, minLength: 8, message: 'Password should contain both lowercase and uppercase alpha characters, a digit and a special character.')]
     #[Groups(['post'])]
     private string $password;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\Choice(callback: 'getAllPositions', message: 'This should be developer, hr, manager or tester')]
+    #[Assert\Choice(callback: 'getAllPositions', message: 'This should be developer, hr, manager or tester.')]
     #[Groups(['get', 'post'])]
     private string $position;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\Regex(pattern: '/\+48\d{9}/', message: 'This value should be in format +48XXXXXXXXX')]
+    #[Assert\Regex(pattern: '/\+48\d{9}/', message: 'This value should be in format +48XXXXXXXXX.')]
     #[Groups(['get', 'post'])]
     private string $phoneNumber;
 
