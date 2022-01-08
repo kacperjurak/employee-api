@@ -67,3 +67,13 @@ To run tests:
     bin/phpunit
     ```  
 
+#### Messenger
+To handle Messenger messages (needed for getting ID from reqres.io):
+1. Access the PHP shell
+    ```
+    docker-compose exec php sh
+    ```
+2. Run consume command
+    ```
+    bin/console messenger:consume async -vv
+    ```
